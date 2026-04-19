@@ -1,5 +1,3 @@
-# The Low-Level Cryptography & Binary Security Lab
-
 This is my main laboratory for Reverse Engineering.
 
 ## Repository Structure
