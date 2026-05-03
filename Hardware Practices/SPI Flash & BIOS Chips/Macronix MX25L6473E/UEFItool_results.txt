@@ -1,0 +1,294 @@
+Structure:
+
+Intel image
+├── Descriptor region
+├── ME region
+│   ├── FPT partition table
+│   │── Padding
+│   │── PSVN
+│   ├── FTPR
+│   │── MFS
+│   │── IVBP
+│   └── FTUP
+│   ├── FLOG
+│   ├── UTOK
+│   └── Padding
+└── BIOS region
+    ├── AmiNvramMainRomAreaGuid
+    ├── Padding
+    ├── 5C60F367-A505-419A-859E-2A4FF6CA6FE5
+    ├── Padding
+    ├── AFDD39F1-19D7-4501-A730-CE5A27E1154B
+    ├── 14E428FA-1A12-4875-B637-8B3CC87FDF07
+    └── 61C0F511-A691-4F54-974F-B9A42172CE53
+
+Descriptor Region:
+
+Fixed: Yes
+Base: 0h
+Offset: 0h
+ReservedVector:
+FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF FF
+Full size: 1000h (4096)
+ME region offset: 1000h
+BIOS region offset: 200000h
+
+Region access settings:
+BIOS: FFFh FFFh
+ME: FFFh FFFh
+GbE: FFFh FFFh
+EC: FFFh FFFh
+
+BIOS access table:
+Read Write
+Desc Yes Yes
+BIOS Yes Yes
+ME Yes Yes
+GbE Yes Yes
+PDR Yes Yes
+EC Yes Yes
+
+Flash chips in VSCC table:
+EF4018 (Winbond W25Q128)
+C22018 (Macronix MX25L128)
+C84018 (GigaDevice GD25x128)
+EF6017 (Winbond W25Q64)
+C22017 (Macronix MX25L64)
+EF4017 (Winbond W25Q64)
+C22016 (Macronix MX25U16)
+
+ME Region:
+
+Fixed: Yes
+Base: 1000h
+Offset: 1000h
+Full size: 1FF000h (2093056)
+Version: 11.6.0.1126
+
+BIOS Region:
+
+Fixed: Yes
+Base: 200000h
+Address: FFA00000h
+Offset: 200000h
+Full size: 600000h (6291456)
+
+
+ME Region şu parçalara sahip:
+
+FPT partition table:
+Fixed: Yes
+Base: 1000h
+Offset: 0h
+Full size: 190h (400)
+Header size: 30h (48)
+Body size: 160h (352)
+ROM bypass vector: present
+Number of entries: 11
+Header version: 20h
+Entry version: 10h
+Header length: 20h
+Flash cycle life: FFFFh
+Flash cycle limit: FFFFh
+UMA size: 0h
+Flags: 0h
+FITC version: 11.6.0.1126
+Checksum: 20h
+
+Padding:
+Fixed: Yes
+Base: 1190h
+Offset: 190h
+Full size: C70h (3184)
+
+PSVN:
+Fixed: Yes
+Base: 1E00h
+Offset: E00h
+Full size: 200h (512)
+Partition type: 01h
+
+FTPR:
+Fixed: Yes
+Base: 2000h
+Offset: 1000h
+Full size: A7000h (684032)
+Partition type: 00h
+
+MFS:
+Fixed: Yes
+Base: A9000h
+Offset: A8000h
+Full size: 64000h (409600)
+Partition type: 01
+
+IVBP:
+Fixed: Yes
+Base: 10D000h
+Offset: 10C000h
+Full size: 4000h (16384)
+Partition type: 01h
+
+FTUP:
+Fixed: Yes
+Base: 111000h
+Offset: 110000h
+Full size: AC000h (704512)
+Partition type: 00h
+
+FLOG:
+Fixed: Yes
+Base: 1BD000h
+Offset: 1BC000h
+Full size: 1000h (4096)
+Partition type: 01h
+
+UTOK:
+Fixed: Yes
+Base: 1BE000h
+Offset: 1BD000h
+Full size: 2000h (8192)
+Partition type: 01h
+
+Padding:
+Fixed: Yes
+Base: 1C0000h
+Offset: 1BF000h
+Full size: 40000h (262144)
+
+{FPT Partition table, FTPR, FTUP} have subparts
+
+
+BIOS region şu parçalara sahip:
+
+AmiNvramMainRomAreaGuid:
+Fixed: Yes
+Base: 200000h
+Header address: FFA00000h
+Data address: FFA00078h
+Offset: 0h
+ZeroVector:
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+Signature: _FVH
+FileSystem GUID: 8C8CE578-8A3D-4F1C-9935-896185C32DD3
+Full size: 40000h (262144)
+Header size: 78h (120)
+Body size: 3FF88h (262024)
+Revision: 2
+Attributes: 0004FEFFh
+Erase polarity: 1
+Checksum: F666h, valid
+NumBlocks: 4h (4), valid
+Length: 10000h (65536), valid
+Extended header size: 14h (20)
+Volume GUID: FA4974FC-AF1D-4E5D-BDC5-DACD6D27BAEC
+
+Padding:
+Fixed: Yes
+Base: 240000h
+Address: FFA40000h
+Offset: 40000h
+Full size: 50000h (327680)
+
+5C60F367-A505-419A-859E-2A4FF6CA6FE5:
+Fixed: No
+Base: 290000h
+Header address: FFA90000h
+Data address: FFA90078h
+Offset: 90000h
+ZeroVector:
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+Signature: _FVH
+FileSystem GUID: 8C8CE578-8A3D-4F1C-9935-896185C32DD3
+Full size: 3B0000h (3866624)
+Header size: 78h (120)
+Body size: 3AFF88h (3866504)
+Revision: 2
+Attributes: 0004FEFFh
+Erase polarity: 1
+Checksum: F5F8h, valid
+NumBlocks: 3Bh (59), valid
+Length: 10000h (65536), valid
+Extended header size: 14h (20)
+Volume GUID: 5C60F367-A505-419A-859E-2A4FF6CA6FE5
+
+Padding:
+Fixed: Yes
+Base: 640000h
+Address: FFE40000h
+Offset: 440000h
+Full size: 20000h (131072)
+
+AFDD39F1-19D7-4501-A730-CE5A27E1154B:
+Fixed: Yes
+Base: 660000h
+Header address: FFE60000h
+Data address: FFE60078h
+Offset: 460000h
+ZeroVector:
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+Signature: _FVH
+FileSystem GUID: 8C8CE578-8A3D-4F1C-9935-896185C32DD3
+Full size: 10000h (65536)
+Header size: 78h (120)
+Body size: FF88h (65416)
+Revision: 2
+Attributes: 0007FEFFh
+Erase polarity: 1
+Checksum: F669h, valid
+NumBlocks: 1h (1), valid
+Length: 10000h (65536), valid
+Extended header size: 14h (20)
+Volume GUID: AFDD39F1-19D7-4501-A730-CE5A27E1154B
+
+14E428FA-1A12-4875-B637-8B3CC87FDF07:
+Fixed: No
+Base: 670000h
+Header address: FFE70000h
+Data address: FFE70078h
+Offset: 470000h
+ZeroVector:
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+Signature: _FVH
+FileSystem GUID: 8C8CE578-8A3D-4F1C-9935-896185C32DD3
+Full size: 90000h (589824)
+Header size: 78h (120)
+Body size: 8FF88h (589704)
+Revision: 2
+Attributes: 0004FEFFh
+Erase polarity: 1
+Checksum: F65Ch, valid
+NumBlocks: 9h (9), valid
+Length: 10000h (65536), valid
+Extended header size: 14h (20)
+Volume GUID: 14E428FA-1A12-4875-B637-8B3CC87FDF07
+
+61C0F511-A691-4F54-974F-B9A42172CE53:
+Fixed: Yes
+Base: 700000h
+Header address: FFF00000h
+Data address: FFF00078h
+Offset: 500000h
+ZeroVector:
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+Signature: _FVH
+FileSystem GUID: 8C8CE578-8A3D-4F1C-9935-896185C32DD3
+Full size: 100000h (1048576)
+Header size: 78h (120)
+Body size: FFF88h (1048456)
+Revision: 2
+Attributes: 0007FEFFh
+Erase polarity: 1
+Checksum: F64Bh, valid
+NumBlocks: 10h (16), valid
+Length: 10000h (65536), valid
+Extended header size: 14h (20)
+Volume GUID: 61C0F511-A691-4F54-974F-B9A42172CE53
+
+{AmiNvramMainRomAreaGuid, 5C60F367-A505-419A-859E-2A4FF6CA6FE5, AFDD39F1-19D7-4501-A730-CE5A27E1154B, 14E428FA-1A12-4875-B637-8B3CC87FDF07, 61C0F511-A691-4F54-974F-B9A42172CE53} have subparts
