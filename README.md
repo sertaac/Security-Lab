@@ -1,8 +1,8 @@
-This is my main laboratory for Reverse Engineering.
+This is my main laboratory for Cyber Security Practices.
 
 ## Repository Structure
 
-### 1. CrackMes
+### 1. Reverse Engineering on CrackMes 
 Solutions, analysis scripts, and detailed write-ups for "crackme" challenges from crackmes.one.
 
 * **1 - 2 Difficulty:**
