@@ -13,9 +13,14 @@ Solutions, analysis scripts, and detailed write-ups for "crackme" challenges fro
     * Focuses on intermediate reverse engineering tasks.
     * Techniques involve "Keygening" (writing custom key generators), algorithm reversing, and unpacking binaries.
 
+### 2. Hardware Practices
+Practical hardware security stuff like BIOS dumping and firmware analysis.
+* **SPI Flash & BIOS Chips:** Projects involving dumping and analyzing BIOS firmware, such as the Macronix MX25L6473E chip.
+
+
 ## Tools & Environment
 The analyses are made by using these tools:
 * **Disassemblers/Decompilers:** Ghidra
 * **Debuggers:** GDB (GNU Debugger)
-* **Binary Analysis:** strings, ltrace, strace, readelf, binwalk
+* **Binary Analysis:** strings, ltrace, strace, readelf, binwalk, UEFITool
 * **Scripting:** Python
