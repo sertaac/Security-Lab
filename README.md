@@ -17,6 +17,9 @@ Solutions, analysis scripts, and detailed write-ups for "crackme" challenges fro
 Practical hardware security stuff like BIOS dumping and firmware analysis.
 * **SPI Flash & BIOS Chips:** Projects involving dumping and analyzing BIOS firmware, such as the Macronix MX25L6473E chip.
 
+### 3. File Compression
+My journey on learning file compression algorithms.
+
 
 ## Tools & Environment
 The analyses are made by using these tools:
