@@ -1,4 +1,4 @@
-This is my main laboratory for Cyber Security Practices.
+This is my main laboratory for practices.
 
 ## Repository Structure
 
